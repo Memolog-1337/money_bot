@@ -1,5 +1,5 @@
+import os
 import telebot
-
 import pytz
 
 from telebot.types import (
@@ -9,11 +9,15 @@ from telebot.types import (
     KeyboardButton,
 )
 
+from dotenv import load_dotenv
+
 from datetime import datetime, timedelta
 
 import base.postgre as bd
 
-BOT_TOKEN = '6185918971:AAHXzhysHACbkxhV8ZqwtImvPBcNat-5s1s'
+load_dotenv()
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 TIMEZONE = pytz.timezone('Europe/Moscow')
 DATETIME_MASK = '%d.%m.%Y'
 
